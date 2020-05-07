@@ -1,0 +1,59 @@
+$greyDark: #040404;
+$greyLighter: #282828;
+$greyLight: #131313;
+
+.main {
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
+  padding-top: 3.4rem;
+  .mainContent {
+    color: white;
+
+    .mainInner {
+      padding: 0.5rem 2rem;
+    }
+    h1,
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.outerWrap {
+  background: grey;
+  height: 100vh;
+  min-height: 100%;
+}
+
+.musicControls {
+  background: $greyLighter;
+  text-align: center;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+  position: relative;
+  border-top: 1px solid $greyDark;
+}
+
+.upperNav {
+  background: rgba(9, 9, 9, 0.78);
+  height: 56px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.App {
+  height: calc(100vh - 90px);
+  background: $greyLight;
+  display: flex;
+}
