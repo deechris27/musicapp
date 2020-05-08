@@ -8,10 +8,6 @@ const VolumeSlider = withStyles({
         height: 6
     },
     thumb: {
-        height: 16,
-        width: 7,
-        marginTop: -5.3,
-        marginLeft: -8,
         "&::before":{
             content: "''",
             height: "inherit",
@@ -29,7 +25,8 @@ const VolumeSlider = withStyles({
     rail: {
         height: 2,
         borderRadius: 7,
-        color: 'white'
+        color: 'white',
+        width: "100px"
     }
 })(Slider);
 
@@ -39,7 +36,7 @@ const VolumeControl = ()=>{
     const [volume, setVolume] = useState(0);
 
     const changeVolume = (e) => {
-        setVolume(e.target.value);
+        setVolume(volume + 10);
     }
 
     return (

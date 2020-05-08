@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {withStyles, Grid, Typography, Slider} from '@material-ui/core';
+import {withStyles, Slider} from '@material-ui/core';
 
 const TimeSlider = withStyles({
     root:{
@@ -36,7 +36,7 @@ const TimeLineControl = ()=>{
 
     return(
         <div style={{ width: "40%" }}>
-          <TimeSlider value={currentTime} style={{ color: "white", top: '20px', right: '20px' }}/>
+          <TimeSlider value={currentTime} style={{ color: "white", top: '25px', right: '15px' }}/>
         </div>
     )
 }
