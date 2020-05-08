@@ -32,11 +32,11 @@ const TimeSlider = withStyles({
 
 const TimeLineControl = ()=>{
 
-    const [currentTime, setCurrentTime] = useState(40);
+    const [currentTime, setCurrentTime] = useState(0);
 
     return(
         <div style={{ width: "40%" }}>
-          <TimeSlider value={currentTime} style={{ color: "white" }}/>
+          <TimeSlider value={currentTime} style={{ color: "white", top: '20px', right: '20px' }}/>
         </div>
     )
 }

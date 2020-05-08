@@ -3,13 +3,16 @@ import PlayPauseButton from '../PlayPause/PlayPauseComponent';
 import NextButton from '../NextButton/NextButton';
 import PreviousButton from '../PreviousButton/PreviousButton';
 import TimeLineControl from '../TimelineControl/TimeLineControl';
+import './musicplayer.styles.scss';
 
 function MusicPlayer() {
     return (
         <div className="musicControls">
-            <PreviousButton />
-            <PlayPauseButton />
-            <NextButton />
+            <div style={{position: 'relative', left: '25%', bottom: '20px'}}>
+                <PreviousButton />
+                <PlayPauseButton />
+                <NextButton />
+            </div>
             <TimeLineControl />
         </div>
     )
