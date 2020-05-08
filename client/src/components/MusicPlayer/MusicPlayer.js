@@ -4,6 +4,7 @@ import NextButton from '../NextButton/NextButton';
 import PreviousButton from '../PreviousButton/PreviousButton';
 import TimeLineControl from '../TimelineControl/TimeLineControl';
 import './musicplayer.styles.scss';
+import VolumeControl from '../VolumeControl/VolumeControl';
 
 function MusicPlayer() {
     return (
@@ -14,6 +15,7 @@ function MusicPlayer() {
                 <NextButton />
             </div>
             <TimeLineControl />
+            <VolumeControl />
         </div>
     )
 }
