@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {PlayCircleFilled, PauseCircleFilled, Pause, PlayArrow, PlayCircleOutline} from '@material-ui/icons';
-import {IconButton, CircularProgress} from '@material-ui/core';
+import React from 'react';
+import {PlayCircleOutline} from '@material-ui/icons';
+import {IconButton} from '@material-ui/core';
 
 function PlayPauseButton(){
     return(

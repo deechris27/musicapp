@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Playlists from '../components/PlaylistComponent';
+import './homepage.styles.scss';
 
 function HomePage() {
 

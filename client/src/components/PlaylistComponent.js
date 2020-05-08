@@ -176,7 +176,7 @@ const Playlists = props => {
               <span>{playlist.desc}</span>
             </div>
             <span className="playIcon">
-              <PlayIcon />
+              <PlayIcon style={{height:"35px", position: 'relative', left: '140px'}}/>
             </span>
           </div>
         </Link>
