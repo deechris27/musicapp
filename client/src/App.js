@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import LibraryPage from './pages/LibraryPage';
 import LeftNav from './components/LeftNav.Component';
+import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           </div>
         </div>
        </div>
-       <div className="musicControls">Music Player</div>
+       <MusicPlayer />
     </div>
     </React.Fragment>
   );
