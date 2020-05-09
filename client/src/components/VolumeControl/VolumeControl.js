@@ -8,6 +8,8 @@ const VolumeSlider = withStyles({
         height: 6
     },
     thumb: {
+        height: 12,
+        width: 12,
         "&::before":{
             content: "''",
             height: "inherit",
@@ -19,13 +21,11 @@ const VolumeSlider = withStyles({
     },
     track: {
         height: 2,
-        borderRadius: 7,
-        color: 'white'
+        borderRadius: 7
     },
     rail: {
         height: 2,
         borderRadius: 7,
-        color: 'white',
         width: "100px"
     }
 })(Slider);
@@ -33,7 +33,7 @@ const VolumeSlider = withStyles({
 
 const VolumeControl = ()=>{
 
-    const [volume, setVolume] = useState(0);
+    const [volume, setVolume] = useState(100);
 
     const changeVolume = (e) => {
         setVolume(volume + 10);
@@ -42,7 +42,7 @@ const VolumeControl = ()=>{
     return (
         <Grid container spacing={1} style={{ maxWidth: "200px", position:'relative', left:'15%' }} >
             <Grid item>
-                <VolumeUp style={{color: 'white'}} />
+                <VolumeUp />
             </Grid>
             <Grid>
                 <VolumeSlider value={volume} onChange={changeVolume} style={{color: 'white'}}/>

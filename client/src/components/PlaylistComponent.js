@@ -1,182 +1,73 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ReactComponent as PlayIcon } from '../assets/playIcon.svg';
 import { Link } from 'react-router-dom'
 import './playlist.styles.scss'
 import axios from 'axios';
 
 
-
-
 const Playlists = props => {
 
-    const [playListItem, setPlayListItem] = useState([]);
+  const [playListItem, setPlayListItem] = useState([]);
 
-    const [img, setImg] = useState([]);
+  const [artistItem, setArtistItem] = useState([]);
 
-    axios.get("http://localhost:5000/playlist")
-      .then(res=>{
-          console.log(res.data);
-          setPlayListItem(res.data)
-      })
+  const [artists, setArtists] = useState(['maroon', 'eminem', 'adele', 'taylor swift', 'lady gaga']);
+
+  useEffect(() => {
+    axios.get('https://deezerdevs-deezer.p.rapidapi.com/search?q=maroon',
+      {
+        headers:
+        {
+          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+          "x-rapidapi-key": "16887570aemshb5778ad9a6af7cdp17983ajsn9bd90f5fac25"
+        }
+      }).then(res => {
+        const data = res.data.data;
+        setPlayListItem(data)
+      });
+  }, [artistItem]);
 
 
-    //dummy playlist
+  // axios.get("http://localhost:5000/playlist")
+  //   .then(res=>{
+  //       console.log(res.data);
+  //       setPlayListItem(res.data)
+  //   })
 
-  const dataPlaylists = [
-    {
-      id: 101,
-      category_id: 3,
-      name: 'Home playlist 1',
-      img:
-        'https://images.unsplash.com/photo-1587201572498-2bc131fbf113?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=924&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 102,
-      category_id: 3,
-      name: 'Home playlist 2',
-      img:
-        'https://images.unsplash.com/photo-1587151711096-23c51f92c920?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 103,
-      category_id: 3,
-      name: 'Home playlist 3',
-      img:
-        'https://images.unsplash.com/photo-1587223075055-82e9a937ddff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 104,
-      category_id: 1,
-      name: 'Focus playlist 1',
-      img:
-        'https://images.unsplash.com/photo-1587165282385-fe9bbf5eb1a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 105,
-      category_id: 4,
-      name: 'Sunday playist',
-      img:
-        'https://images.unsplash.com/photo-1587143602695-c980e283be9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2702&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 106,
-      category_id: 2,
-      name: 'Mood playist 1 ',
-      img:
-        'https://images.unsplash.com/photo-1587220111918-7a5c0f0c46f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
-      desc: 'Lorem ipsum',
-    },
-    {
-      id: 107,
-      category_id: 2,
-      name: 'Mood playist 2',
-      img:
-        'https://images.unsplash.com/photo-1587169544748-d21bd810f57e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
-      desc: 'Lorem ipsum',
-    },
-  ]
+     let maroon = axios.get('https://deezerdevs-deezer.p.rapidapi.com/search?q=artists[0]', {  headers: {"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+     "x-rapidapi-key": "16887570aemshb5778ad9a6af7cdp17983ajsn9bd90f5fac25" } });
 
+     let eminem = axios.get('https://deezerdevs-deezer.p.rapidapi.com/search?q=artists[1]', {  headers: {"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+     "x-rapidapi-key": "16887570aemshb5778ad9a6af7cdp17983ajsn9bd90f5fac25" } });
+
+     let adele = axios.get('https://deezerdevs-deezer.p.rapidapi.com/search?q=artists[2]', {  headers: {"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+     "x-rapidapi-key": "16887570aemshb5778ad9a6af7cdp17983ajsn9bd90f5fac25" } });
+
+     let taylorSwift = axios.get('https://deezerdevs-deezer.p.rapidapi.com/search?q=artists[3]', {  headers: {"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+     "x-rapidapi-key": "16887570aemshb5778ad9a6af7cdp17983ajsn9bd90f5fac25" } });
+
+     let ladyGaga = axios.get('https://deezerdevs-deezer.p.rapidapi.com/search?q=artists[4]', {  headers: {"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+     "x-rapidapi-key": "16887570aemshb5778ad9a6af7cdp17983ajsn9bd90f5fac25" } });
+     
+    //  axios.all([maroon, eminem, adele, taylorSwift, ladyGaga]).then(axios.spread((...res)=>{
+    //    console.log("allllll...", res)
+    //  }))
 
 
   return (
     <div className="cardsWrapInner">
-      {dataPlaylists.map((playlist, id) => (
-        <Link to="" key={id}>
-          <div className="card" key={id}>
+      {playListItem && playListItem.map((playlist) => (
+        <Link to="/playlist" key={playlist.id}>
+          <div className="card" key={playlist.id}>
             <div className="cardImage">
-              <img src={playlist.img} alt="Pic 1" />
+              <img src={playlist.artist.picture} alt="Pic 1" />
             </div>
             <div className="cardContent">
-              <h3>{playlist.name}</h3>
-              <span>{playlist.desc}</span>
+              <h3>{playlist.album.title}</h3>
+              <span>{playlist.artist.name}</span>
             </div>
             <span className="playIcon">
-              <PlayIcon style={{height:"35px", position: 'relative', left: '140px'}}/>
+              <PlayIcon style={{ height: "35px", position: 'relative', left: '140px' }} />
             </span>
           </div>
         </Link>

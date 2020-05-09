@@ -6,6 +6,7 @@ import SearchPage from './pages/SearchPage';
 import LibraryPage from './pages/LibraryPage';
 import LeftNav from './components/LeftNav.Component';
 import MusicPlayer from './components/MusicPlayer/MusicPlayer';
+import PlaylistPage from './pages/PlayList';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/" exact component={HomePage}/>
               <Route path="/search" component={SearchPage} />
               <Route path="/library" component={LibraryPage} />
+              <Route path="/Playlist" component={PlaylistPage} />
             </Switch>
           </div>
         </div>
