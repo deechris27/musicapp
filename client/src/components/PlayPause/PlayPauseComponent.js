@@ -2,22 +2,10 @@ import React, {useState} from 'react';
 import {PlayCircleOutline, PauseCircleOutline} from '@material-ui/icons';
 import {IconButton} from '@material-ui/core';
 
-const PlayPauseButton = (props) => {
+const PlayPauseButton = ({playPauseToggle, playPause}) => {
     
-    const [playPauseToggle, setPlayPauseToggle] = useState(false)
-
-    const playPauseFunction = () => {
-         if(!playPauseToggle){
-             props.clickPlay();
-             setPlayPauseToggle(!playPauseToggle)
-         }else{
-             props.clickPause();
-             setPlayPauseToggle(!playPauseToggle)
-         }
-    }
-
-    return(
-        <IconButton onClick={playPauseFunction}>
+     return(
+        <IconButton onClick={playPause}>
             {!playPauseToggle ? <PlayCircleOutline style={{ fontSize: "2em", color: "white" }} />:
                 <PauseCircleOutline style={{ fontSize: "2em", color: "white" }} />
             }

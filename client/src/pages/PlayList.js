@@ -5,7 +5,7 @@ import './plalistpage.styles.scss';
 
 const PlaylistPage = () => {
 
-  let { id } = useParams()
+  //let { id } = useParams()
 
   return (
     <div className="playlistPage">

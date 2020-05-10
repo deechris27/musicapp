@@ -23,6 +23,7 @@ const Playlists = props => {
         }
       }).then(res => {
         const data = res.data.data;
+        //console.log("playlistttttt...", data)
         setPlayListItem(data)
       });
   }, [artistItem]);
