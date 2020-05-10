@@ -19,7 +19,7 @@ const PlaylistPage = () => {
           </div>
           <div className="playlistPageContent">
             <p className="smallText uppercase bold">Playlist</p>
-            <h1>Playlist Items</h1>
+            <h1>Playlist  Items</h1>
 
             <p className="tagline">
               Your playlist Items below

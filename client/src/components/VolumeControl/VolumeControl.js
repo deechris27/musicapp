@@ -10,15 +10,15 @@ const VolumeSlider = withStyles({
         height: 10,
         width: 10,
         marginTop: -4.3,
-        marginLeft: -8,
+        marginLeft: 3,
         "&::before":{
             content: "''",
             height: "inherit",
             width: "inherit",
             position: "absolute",
             transform: "scale(1.6)",
-            borderRadius: "50px",
-            border: "1px solid"
+            borderRadius: "20px",
+            border: "0.5px solid"
         }
     },
     track: {
