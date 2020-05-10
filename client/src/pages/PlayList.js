@@ -19,10 +19,10 @@ const PlaylistPage = () => {
           </div>
           <div className="playlistPageContent">
             <p className="smallText uppercase bold">Playlist</p>
-            <h1>Hello Deepak!!!</h1>
+            <h1>Playlist Items</h1>
 
             <p className="tagline">
-              Some random text......
+              Your playlist Items below
             </p>
             <div className="playlistPageDesc">
               <p className="spotify">Mytidbit</p>
