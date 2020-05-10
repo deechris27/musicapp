@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-import {Grid, Slider, withStyles} from "@material-ui/core";
+import {withStyles, Slider, Grid} from '@material-ui/core';
 import {VolumeUp} from "@material-ui/icons";
-
 
 const VolumeSlider = withStyles({
     root:{
         height: 6
     },
     thumb: {
-        height: 12,
-        width: 12,
+        height: 10,
+        width: 10,
+        marginTop: -4.3,
+        marginLeft: -8,
         "&::before":{
             content: "''",
             height: "inherit",
@@ -17,38 +18,33 @@ const VolumeSlider = withStyles({
             position: "absolute",
             transform: "scale(1.6)",
             borderRadius: "50px",
+            border: "1px solid"
         }
     },
     track: {
-        height: 2,
+        height: 3,
         borderRadius: 7
     },
     rail: {
-        height: 2,
-        borderRadius: 7,
-        width: "100px"
+        height: 3,
+        borderRadius: 7
     }
 })(Slider);
-
 
 const VolumeControl = ()=>{
 
     const [volume, setVolume] = useState(100);
 
-    const changeVolume = (e) => {
-        setVolume(volume + 10);
-    }
+    const handleChange = (event, newValue) =>{
+        setVolume(newValue)
+    };
 
-    return (
-        <Grid container spacing={1} style={{ maxWidth: "200px", position:'relative', left:'15%' }} >
-            <Grid item>
-                <VolumeUp />
-            </Grid>
-            <Grid>
-                <VolumeSlider value={volume} onChange={changeVolume} style={{color: 'white'}}/>
-            </Grid>
+    return(
+       <Grid container spacing={1} style={{width: '30%', position: 'relative', left: '90px', top: '10px'}}>
+            <VolumeUp style={{position: 'relative', left: '70px', top: '2.5px'}}/>
+            <VolumeSlider value={volume} max={100} onChange={handleChange} style={{ maxWidth: "200px", position:'relative', left:'15%', color: 'white' }}/>
         </Grid>
     )
-}
+};
 
 export default VolumeControl;

@@ -78,14 +78,13 @@ function MusicPlayer() {
 
         if(player && audioFile.current.currentTime < 5 || state.currentSongIndex < 1){
             audioFile.current.currentTime = 0;
-        }else{
+        }
             setState({
                 ...state,
                 playPauseToggle: true,
                 audioState: "paused",
                 currentSongIndex: state.currentSongIndex - 1
             });
-        }
 
         console.log("****previous", state.currentSongIndex)
     };

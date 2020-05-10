@@ -47,8 +47,8 @@ const PlaylistPage = () => {
                 <PlayIcon className="playI" style={{ height: "35px", position: 'relative', left: '140px' }}/>
               </div>
               <div className="songDetails">
-                <h3>Held Down</h3>
-                <span>Laura Marling</span>
+                <h3>A Phone Call</h3>
+                <span>Maroon 5</span>
               </div>
               <div className="songTime">
                 <span>4:07</span>
@@ -59,8 +59,8 @@ const PlaylistPage = () => {
                 <PlayIcon className="playI" style={{ height: "35px", position: 'relative', left: '140px' }}/>
               </div>
               <div className="songDetails">
-                <h3>Held Down</h3>
-                <span>Laura Marling</span>
+                <h3>A Phone Call</h3>
+                <span>Maroon 5</span>
               </div>
               <div className="songTime">
                 <span>4:07</span>
@@ -71,8 +71,8 @@ const PlaylistPage = () => {
                 <PlayIcon className="playI" style={{ height: "35px", position: 'relative', left: '140px' }}/>
               </div>
               <div className="songDetails">
-                <h3>Held Down</h3>
-                <span>Laura Marling</span>
+                <h3>A Phone Call</h3>
+                <span>Maroon 5</span>
               </div>
               <div className="songTime">
                 <span>4:07</span>
@@ -83,8 +83,8 @@ const PlaylistPage = () => {
                 <PlayIcon className="playI" style={{ height: "35px", position: 'relative', left: '140px' }}/>
               </div>
               <div className="songDetails">
-                <h3>Held Down</h3>
-                <span>Laura Marling</span>
+                <h3>A Phone Call</h3>
+                <span>Maroon 5</span>
               </div>
               <div className="songTime">
                 <span>4:07</span>
@@ -95,8 +95,8 @@ const PlaylistPage = () => {
                 <PlayIcon className="playI" style={{ height: "35px", position: 'relative', left: '140px' }}/>
               </div>
               <div className="songDetails">
-                <h3>Held Down</h3>
-                <span>Laura Marling</span>
+                <h3>A Phone Call</h3>
+                <span>Maroon 5</span>
               </div>
               <div className="songTime">
                 <span>4:07</span>
@@ -107,8 +107,8 @@ const PlaylistPage = () => {
                 <PlayIcon className="playI" style={{ height: "35px", position: 'relative', left: '140px' }}/>
               </div>
               <div className="songDetails">
-                <h3>Held Down</h3>
-                <span>Laura Marling</span>
+                <h3>A Phone Call</h3>
+                <span>Maroon 5</span>
               </div>
               <div className="songTime">
                 <span>4:07</span>
